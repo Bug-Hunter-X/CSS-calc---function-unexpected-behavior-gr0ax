@@ -1,0 +1,17 @@
+/* bugSolution.css */
+
+/* Instead of directly using calc() which might result in a negative value, use max() to ensure the value is always non-negative. */
+div {
+  width: max(0, calc(100px - 50%)); /* Ensures width is never negative */
+  height: max(0, calc(100px - 200px)); /* Handles negative calculation gracefully */
+}
+
+/* Ensure consistent units within the calc() function */
+div {
+  margin: calc(10% + 10px); /* Using same unit or easily convertible unit */
+}
+
+/*  If percentage calculation may result in a negative number, ensure to have a min value */
+div{
+  width: min(100px, calc(100% - 200px));
+}
